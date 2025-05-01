@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Gujarat - Experience the Vibrant Culture & Heritage</title>
+  <meta name="description" content="Explore the vibrant state of Gujarat in India. Discover historical monuments, pristine beaches, wildlife sanctuaries, and rich cultural heritage.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+
+</head>
+<body>
+  <!-- Header Section -->
+  <header id="main-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <img src="gujarat.jpeg" alt="Gujarat Tourism Logo">
+            <span>Gujarat Tourism</span>
+          </a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#destinations" class="active">Destinations</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#culture">Culture</a></li>
+            <li><a href="#plan">Plan Your Trip</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="signup.html" class="btn btn-sec">Sign Up</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-slideshow">
+      <div class="hero-slide active">
+        <img src="statue.webp" alt="Statue of Unity - World's Tallest Statue">
+        <div class="hero-content">
+          <h1>Discover the Vibrant Spirit of Gujarat</h1>
+          <p>Experience the colorful traditions, breathtaking landscapes, and rich heritage</p>
+          <a href="#destinations" class="btn btn-primary">Explore Destinations</a>
+        </div>
+      </div>
+      <div class="hero-slide">
+        <img src="faisal-khatri-r1uu-H6ko-o-unsplash.jpg"Rann of Kutch - White Desert">
+        <div class="hero-content">
+          <h1>Experience the Magic of Rann of Kutch</h1>
+          <p>Visit the spectacular white desert and immerse yourself in local culture</p>
+          <a href="#destinations" class="btn btn-primary">Explore Destinations</a>
+        </div>
+      </div>
+      <div class="hero-slide">
+        <img src="deven-rathod-CmXlSVAF1wg-unsplash.jpg" alt="Gir National Park - Home of Asiatic Lion">
+        <div class="hero-content">
+          <h1>Encounter the Asiatic Lion in Its Natural Habitat</h1>
+          <p>Gir National Park - the only home of wild Asiatic lions in the world</p>
+          <a href="#destinations" class="btn btn-primary">Explore Wildlife</a>
+        </div>
+      </div>
+      <div class="slideshow-controls">
+        <button id="prev-slide"><i class="fas fa-chevron-left"></i></button>
+        <div class="slideshow-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <button id="next-slide"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Info Section -->
+  <section id="quick-info">
+    <div class="container">
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="icon">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <h3>33 Districts</h3>
+          <p>Explore diverse regions with unique cultures and attractions</p>
+        </div>
+        <div class="info-card">
+          <div class="icon">
+            <i class="fas fa-landmark"></i>
+          </div>
+          <h3>Rich Heritage</h3>
+          <p>Visit UNESCO World Heritage sites and historical monuments</p>
+        </div>
+        <div class="info-card">
+          <div class="icon">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <h3>Culinary Delights</h3>
+          <p>Taste authentic Gujarati cuisine and street food</p>
+        </div>
+        <div class="info-card">
+          <div class="icon">
+            <i class="fas fa-mask"></i>
+          </div>
+          <h3>Colorful Festivals</h3>
+          <p>Experience vibrant celebrations throughout the year</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Destinations -->
+  <section id="destinations" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Destinations</h2>
+        <p class="section-subtitle">Discover the most iconic places to visit in Gujarat</p>
+      </div>
+      <div class="destination-carousel">
+        <div class="destination-card">
+          <div class="destination-img">
+            <img src="Statue_of_Unity_Twitter_Piyush_Desai.jpg" alt="Statue of Unity">
+            <div class="destination-category">Monument</div>
+          </div>
+          <div class="destination-info">
+            <h3>Statue of Unity</h3>
+            <p>The world's tallest statue honoring Sardar Vallabhbhai Patel</p>
+            <div class="destination-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Kevadia</span>
+              <a href="#" class="read-more" data-title="Statue of Unity" data-info="The Statue of Unity is the world's tallest statue at 182 meters, dedicated to Sardar Vallabhbhai Patel. Located near Kevadia, it symbolizes national unity and pride. The complex features a museum, exhibition hall, and a spectacular view from the viewing gallery.">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="destination-card">
+          <div class="destination-img">
+            <img src="faisal-khatri-r1uu-H6ko-o-unsplash.jpg" alt="Rann of Kutch">
+            <div class="destination-category">Natural Wonder</div>
+          </div>
+          <div class="destination-info">
+            <h3>Rann of Kutch</h3>
+            <p>Experience the mesmerizing white desert and cultural festivities</p>
+            <div class="destination-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Kutch District</span>
+              <a href="#" class="read-more" data-title="Rann of Kutch" data-info="The Rann of Kutch is a vast white salt marsh, offering an otherworldly landscape. Visit during Rann Utsav for folk music, dance, and traditional crafts. The desert comes alive with full moon nights and vibrant culture.">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="destination-card">
+          <div class="destination-img">
+            <img src="istockphoto-1174372687-612x612.webp" alt="Somnath Temple">
+            <div class="destination-category">Religious</div>
+          </div>
+          <div class="destination-info">
+            <h3>Somnath Temple</h3>
+            <p>Visit the sacred Jyotirlinga temple with stunning sea views</p>
+            <div class="destination-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Prabhas Patan</span>
+              <a href="#" class="read-more" data-title="Somnath Temple" data-info="Somnath Temple is one of the twelve Jyotirlinga shrines, known for its spiritual significance and beautiful seaside location. The temple has been rebuilt several times, signifying resilience and faith.">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="destination-card">
+          <div class="destination-img">
+            <img src="deven-rathod-CmXlSVAF1wg-unsplash.jpg" alt="Gir National Park">
+            <div class="destination-category">Wildlife</div>
+          </div>
+          <div class="destination-info">
+            <h3>Gir National Park</h3>
+            <p>The last abode of Asiatic Lions and diverse wildlife</p>
+            <div class="destination-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Junagadh</span>
+              <a href="#" class="read-more" data-title="Gir National Park" data-info="Gir National Park is the only place in the world to see wild Asiatic Lions. Along with its lion population, the park is home to leopards, antelopes, and hundreds of bird species. Enjoy jungle safaris and nature walks.">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button id="prev-destination"><i class="fas fa-chevron-left"></i></button>
+        <button id="next-destination"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiences Section -->
+  <section id="experiences" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Unforgettable Experiences</h2>
+        <p class="section-subtitle">Create memories that last a lifetime</p>
+      </div>
+      <div class="experiences-grid">
+        <div class="experience-card">
+          <img src="heritage.webp" alt="Heritage Tours">
+          <div class="experience-overlay">
+            <h3>Heritage Tours</h3>
+            <p>Explore centuries of history and architecture</p>
+            <a href="experience-detail.html?exp=heritage-tours" class="btn btn-outline learn-more" data-title="Heritage Tours" data-info="Discover Gujarat's heritage with guided tours of ancient forts, palaces, stepwells, and UNESCO sites like Rani ki Vav. Experience the legacy of empires and dynasties that shaped this land.">Learn More</a>
+          </div>
+        </div>
+        <div class="experience-card">
+          <img src="rann utsav.webp" alt="Desert Festival">
+          <div class="experience-overlay">
+            <h3>Rann Utsav</h3>
+            <p>Experience the vibrant desert festival</p>
+            <a href="experience-detail.html?exp=rann-utsav" class="btn btn-outline learn-more" data-title="Rann Utsav" data-info="Rann Utsav is Gujarat's grand celebration of music, dance, crafts, and cuisine amid the surreal white desert. Stay in luxury tents and enjoy moonlit vistas and camel rides.">Learn More</a>
+          </div>
+        </div>
+        <div class="experience-card">
+          <img src="murad-swaleh-mssVfuwEXiw-unsplash.jpg" alt="Wildlife Safari">
+          <div class="experience-overlay">
+            <h3>Wildlife Safari</h3>
+            <p>Encounter the majestic Asiatic Lion</p>
+            <a href="experience-detail.html?exp=wildlife-safari" class="btn btn-outline learn-more" data-title="Wildlife Safari" data-info="Explore Gir National Park by jeep to see lions, leopards, and a variety of wildlife. Nature lovers will also enjoy birdwatching and scenic landscapes.">Learn More</a>
+          </div>
+        </div>
+        <div class="experience-card">
+          <img src="sooraj-perambra-uv4h7wIQcHQ-unsplash.jpg" alt="Cultural Performances">
+          <div class="experience-overlay">
+            <h3>Cultural Shows</h3>
+            <p>Witness traditional dance and music</p>
+            <a href="experience-detail.html?exp=cultural-shows" class="btn btn-outline learn-more" data-title="Cultural Shows" data-info="Traditional Gujarati folk dances like Garba and Dandiya, and colorful performances, bring the state's culture alive. Enjoy music, plays, and festive celebrations year-round.">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Culture Section -->
+  <section id="culture" class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Culture</h2>
+        <p class="section-subtitle">Dive into the vibrant arts, music, dance, and traditions of Gujarat</p>
+      </div>
+      <div class="culture-content">
+        <div class="culture-block">
+          <h3>Folk Dance & Music</h3>
+          <p>Gujarat is synonymous with Garba and Dandiya Raas, energetic folk dances performed especially during Navratri. Traditional music and instruments like dhol, shehnai, and tabla accompany these joyful celebrations.</p>
+        </div>
+        <div class="culture-block">
+          <h3>Art & Craft</h3>
+          <p>The state is famed for handicrafts such as Bandhani textiles, Patola silk, block prints, mirror work, and intricate beadwork from Kutch. These crafts showcase Gujarat's centuries-old artisanship and creativity.</p>
+        </div>
+        <div class="culture-block">
+          <h3>Festivals & Cuisine</h3>
+          <p>From International Kite Festival to Diwali and Holi, festivals are celebrated with color and gusto. Gujarati thali, snacks like dhokla and fafda, and sweets like jalebi are integral to the region's culinary heritage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Map Section -->
+  <section id="explore-map" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Explore Gujarat</h2>
+        <p class="section-subtitle">Discover attractions across different regions</p>
+      </div>
+      <div class="map-container">
+        <div id="gujarat-map">
+          <div id="leaflet-map" style="height: 500px; width: 100%;"></div>
+
+          <!-- Interactive Map will be loaded here via JavaScript -->
+        </div>
+        <div class="map-sidebar">
+          <div class="region-filters">
+            <h3>Regions</h3>
+            <ul>
+              <li><button class="region-btn active" data-region="all">All Regions</button></li>
+              <li><button class="region-btn" data-region="north">North Gujarat</button></li>
+              <li><button class="region-btn" data-region="central">Central Gujarat</button></li>
+              <li><button class="region-btn" data-region="south">South Gujarat</button></li>
+              <li><button class="region-btn" data-region="kutch">Kutch Region</button></li>
+              <li><button class="region-btn" data-region="saurashtra">Saurashtra</button></li>
+            </ul>
+          </div>
+          <div class="attraction-filters">
+            <h3>Attractions</h3>
+            <div class="filter-buttons">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="heritage">Heritage</button>
+              <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+              <button class="filter-btn" data-filter="religious">Religious</button>
+              <button class="filter-btn" data-filter="beaches">Beaches</button>
+              <button class="filter-btn" data-filter="cultural">Cultural</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plan Your Trip Section -->
+  <section id="plan" class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Plan Your Trip</h2>
+        <p class="section-subtitle">Everything you need for a perfect Gujarat experience</p>
+      </div>
+      <div class="plan-grid">
+        <div class="plan-card">
+          <div class="plan-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h3>Best Time to Visit</h3>
+          <p>October to March is ideal with pleasant weather perfect for sightseeing and outdoor activities.</p>
+          <a href="best-time-to-visit.html" class="read-more">Learn More</a>
+        </div>
+        <div class="plan-card">
+          <div class="plan-icon">
+            <i class="fas fa-route"></i>
+          </div>
+          <h3>Suggested Itineraries</h3>
+          <p>Discover curated travel plans from weekend getaways to comprehensive exploration.</p>
+          <a href="view-itineraries.html" class="read-more">View Itineraries</a>
+        </div>
+        <div class="plan-card">
+          <div class="plan-icon">
+            <i class="fas fa-hotel"></i>
+          </div>
+          <h3>Accommodation</h3>
+          <p>Find the perfect stay from luxury hotels to authentic heritage properties.</p>
+          <a href="find-hotels.html" class="read-more">Find Hotels</a>
+        </div>
+        <div class="plan-card">
+          <div class="plan-icon">
+            <i class="fas fa-plane"></i>
+          </div>
+          <h3>Getting Here</h3>
+          <p>Information on airports, railways, waterways and road connectivity to Gujarat.</p>
+          <a href="transportation-info.html" class="read-more">Transportation Info</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Gallery</h2>
+        <p class="section-subtitle">Visual journey through Gujarat's beauty</p>
+      </div>
+      <div class="gallery-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="monuments">Monuments</button>
+        <button class="filter-btn" data-filter="culture">Culture</button>
+        <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+        <button class="filter-btn" data-filter="landscapes">Landscapes</button>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item" data-category="monuments">
+          <img src="ronak-davda-XyzeinaNWWc-unsplash (1).jpg" alt="Statue of Unity">
+          <div class="gallery-overlay">
+            <h4>Statue of Unity</h4>
+            <p>World's tallest statue</p>
+            <a href="#" class="gallery-zoom"><i class="fas fa-search-plus"></i></a>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="landscapes">
+          <img src="rann utsav.webp" alt="Rann of Kutch">
+          <div class="gallery-overlay">
+            <h4>Rann of Kutch</h4>
+            <p>White salt desert</p>
+            <a href="#" class="gallery-zoom"><i class="fas fa-search-plus"></i></a>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="wildlife">
+          <img src="uday-kiran-NdUY-PhdY4Y-unsplash.jpg" alt="Asiatic Lion">
+          <div class="gallery-overlay">
+            <h4>Gir Lion</h4>
+            <p>Majestic Asiatic Lion</p>
+            <a href="#" class="gallery-zoom"><i class="fas fa-search-plus"></i></a>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="monuments">
+          <img src="rani.jpeg" alt="Rani ki Vav">
+          <div class="gallery-overlay">
+            <h4>Rani ki Vav</h4>
+            <p>UNESCO World Heritage Site</p>
+            <a href="#" class="gallery-zoom"><i class="fas fa-search-plus"></i></a>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="culture">
+          <img src="folk.webp" alt="Traditional Dance">
+          <div class="gallery-overlay">
+            <h4>Folk Dance</h4>
+            <p>Traditional Garba performance</p>
+            <a href="#" class="gallery-zoom"><i class="fas fa-search-plus"></i></a>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="landscapes">
+          <img src="saputara2.jpeg" alt="Saputara">
+          <div class="gallery-overlay">
+            <h4>Saputara</h4>
+            <p>Hill station landscape</p>
+            <a href="#" class="gallery-zoom"><i class="fas fa-search-plus"></i></a>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="landscapes">
+          <img src="dwarka.webp" alt="DwarkaDhish">
+          <div class="gallery-overlay">
+            <h4>Dwarkadhish Temple</h4>
+            <p>Land of Lord Krishna</p>
+            <a href="#" class="gallery-zoom"><i class="fas fa-search-plus"></i></a>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="landscapes">
+          <img src="somanth.webp" alt="Somnath Temple">
+          <div class="gallery-overlay">
+            <h4>Somanth Temple</h4>
+            <p>Land of Lord Shiva</p>
+            <a href="#" class="gallery-zoom"><i class="fas fa-search-plus"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Traveler Stories</h2>
+        <p class="section-subtitle">Experiences shared by visitors</p>
+      </div>
+      <div class="testimonial-slider">
+        <!-- NEW: Indian testimonial -->
+        <div class="testimonial-card">
+          <div class="testimonial-img">
+            <img src="harshita.jpg" alt="HM">
+          </div>
+          <div class="testimonial-content">
+            <p>"Exploring Gujarat was a dream come true. From the vibrant Navratri festival to delicious street food and ancient temples, every part of my journey was unforgettable."</p>
+            <div class="testimonial-author">
+              <h4>Harshita Mishra</h4>
+              <span>Uttar Pradesh, India</span>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card active">
+          <div class="testimonial-img">
+            <img src="rohit.jpg" alt="RSS">
+          </div>
+          <div class="testimonial-content">
+            <p>"My trip to the Rann of Kutch during the Rann Utsav was magical. The white desert under the full moon is a sight I'll never forget. The local hospitality was incredible too!"</p>
+            <div class="testimonial-author">
+              <h4>Rohit Singh Shekhawat</h4>
+              <span>Rajasthan, India</span>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-img">
+            <img src="shshank.jpg" alt="SD">
+          </div>
+          <div class="testimonial-content">
+            <p>"As someone with Gujarati roots, bringing my family to explore our heritage was special. The Statue of Unity left us in awe, and the food throughout our journey was simply delicious."</p>
+            <div class="testimonial-author">
+              <h4>Shshank Dogra</h4>
+              <span>Punjab, India</span>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-img">
+            <img src="aarav.jpg" alt="AS">
+          </div>
+          <div class="testimonial-content">
+            <p>"The wildlife safari in Gir was the highlight of our trip. We were lucky to spot three lions! The guides were knowledgeable and the entire experience was well organized and educational."</p>
+            <div class="testimonial-author">
+              <h4>Aarav Sikriwal</h4>
+              <span>Bihar, India</span>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-controls">
+        <button id="prev-testimonial"><i class="fas fa-chevron-left"></i></button>
+        <div class="testimonial-dots">
+          <span class="dot"></span>
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <button id="next-testimonial"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Plan Your Gujarat Adventure</h2>
+        <p class="section-subtitle">Contact us for custom itineraries or assistance</p>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>Our Office</h3>
+            <p>Tourism Corporation of Gujarat Ltd.<br>Udyog Bhavan, Block No. 16<br>Gandhinagar, Gujarat, India</p>
+          </div>
+          <div class="contact-card">
+            <div class="icon"><i class="fas fa-phone-alt"></i></div>
+            <h3>Call Us</h3>
+            <p>+91 1800 200 5080<br>(Toll-Free Tourist Helpline)</p>
+          </div>
+          <div class="contact-card">
+            <div class="icon"><i class="fas fa-envelope"></i></div>
+            <h3>Email Us</h3>
+            <p>info@gujarattourism.com<br>support@gujarattourism.com</p>
+          </div>
+          <div class="social-links">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-container">
+          <form id="inquiry-form" class="contact-form">
+            <h3>Send us a Message</h3>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+              <div class="form-group">
+                <label for="travel-date">Travel Date</label>
+                <input type="date" id="travel-date" name="travel-date">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="interests">Interests</label>
+              <select id="interests" name="interests">
+                <option value="">Select your primary interest</option>
+                <option value="heritage">Heritage & Culture</option>
+                <option value="wildlife">Wildlife & Nature</option>
+                <option value="spiritual">Spiritual Tourism</option>
+                <option value="adventure">Adventure Activities</option>
+                <option value="food">Culinary Experiences</option>
+                <option value="all">All of the above</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section id="newsletter" class="section bg-primary">
+    <div class="container">
+      <div class="newsletter-container">
+        <div class="newsletter-content">
+          <h2>Stay Updated</h2>
+          <p>Subscribe to our newsletter for travel tips, new destinations and upcoming events</p>
+        </div>
+        <form id="newsletter-form" class="newsletter-form">
+          <div class="form-group">
+            <input type="email" id="newsletter-email" name="email" placeholder="Enter your email address" required>
+            <button type="submit" class="btn btn-light">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="OIP.jpeg" alt="Gujarat Tourism Logo">
+          <h3>Gujarat Tourism</h3>
+          <p>Explore the vibrant state of Gujarat - where tradition meets modernity</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-section">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#destinations">Destinations</a></li>
+              <li><a href="#experiences">Experiences</a></li>
+              <li><a href="#plan">Plan Your Trip</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Information</h4>
+            <ul>
+              <li><a href="https://en.wikipedia.org/wiki/Gujarat">About Gujarat</a></li>
+              <li><a href="https://pravasimitra.gujarattourism.com/contact">How to Reach</a></li>
+              <li><a href="https://www.holidify.com/state/gujarat/best-time-to-visit.html">Weather & Best Time</a></li>
+              <li><a href="#">Travel Tips</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Tourist Helpline</a></li>
+              <li><a href="#">Feedback</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Gujarat Tourism. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal for Gallery Images -->
+  <div id="gallery-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <img id="modal-img" src="" alt="Gallery Image">
+      <div id="modal-caption"></div>
+    </div>
+  </div>
+
+  <!-- Modal for Read More and Learn More -->
+  <div id="info-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" id="close-info-modal">&times;</span>
+      <div id="info-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Floating Chatbot Button and Chat Window -->
+  <div class="chatbot-fab" id="chatbot-fab">
+    <i class="fas fa-comments"></i>
+  </div>
+  <div class="chatbot-modal" id="chatbot-modal">
+    <div class="chatbot-header">
+      <span>Ask Gujarat Tourism</span>
+      <button class="chatbot-close" id="chatbot-close">&times;</button>
+    </div>
+    <div class="chatbot-body" id="chatbot-body">
+      <div class="chatbot-msg chatbot-msg-bot">Hello! How can I help you with your trip to Gujarat?</div>
+    </div>
+    <div class="chatbot-footer">
+      <input type="text" id="chatbot-input" placeholder="Type your message..." autocomplete="off" />
+      <button id="chatbot-send"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>

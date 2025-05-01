@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transportation Info</title>
+  <link rel="stylesheet" href="css/plan.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .image {
+      flex: 1;
+      max-width: 40%;
+      padding: 10px;
+    }
+
+    .image img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .content {
+      flex: 1;
+      max-width: 55%;
+      padding: 10px 20px;
+    }
+
+    .content h2 {
+      margin: 0 0 10px;
+      color: #2c3e50;
+    }
+
+    .content p {
+      margin: 0 0 20px;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+      }
+
+      .image, .content {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .content {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <!-- Add navigation here -->
+    </nav>
+  </header>
+  <main class="container">
+    <h1>Transportation Info</h1>
+    <p>Discover the various ways to travel to and around Gujarat. From air travel to railways and roadways, find the best options for your journey.</p>
+
+    <div class="section">
+      <div class="image">
+        <img src="images/air-travel.jpg" alt="Air Travel to Gujarat">
+      </div>
+      <div class="content">
+        <h2>By Air</h2>
+        <p>Gujarat is well-connected by air, with major airports in Ahmedabad, Surat, Vadodara, and Rajkot. Sardar Vallabhbhai Patel International Airport in Ahmedabad serves as the primary gateway for international travelers.</p>
+        <ul>
+          <li>Direct flights to major Indian cities.</li>
+          <li>International connections to Dubai, London, and more.</li>
+          <li>Convenient airport facilities and services.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="image">
+        <img src="images/rail-travel.jpg" alt="Railway Network Gujarat">
+      </div>
+      <div class="content">
+        <h2>By Train</h2>
+        <p>Gujarat boasts an extensive railway network connecting major cities and towns. Travel comfortably in premium trains like Shatabdi Express and Rajdhani Express.</p>
+        <ul>
+          <li>Direct trains to Delhi, Mumbai, and Bangalore.</li>
+          <li>Luxury trains like The Palace on Wheels.</li>
+          <li>Convenient online booking and reservation systems.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="image">
+        <img src="images/road-travel.jpg" alt="Road Travel in Gujarat">
+      </div>
+      <div class="content">
+        <h2>By Road</h2>
+        <p>Gujarat has an excellent road network, making it easy to explore by car or bus. National highways connect the state to neighboring regions, and luxury buses provide comfort for long-distance travel.</p>
+        <ul>
+          <li>State-run and private buses available.</li>
+          <li>Well-maintained highways and toll roads.</li>
+          <li>Scenic drives through picturesque landscapes.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <!-- Add footer here -->
+  </footer>
+</body>
+</html>

@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience Detail | Gujarat Tourism</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header and nav (can be consistent with index.html, you may extract into an include for large projects) -->
+  <header id="main-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <img src="https://images.unsplash.com/photo-1588416499018-d8c255524aad?q=80&w=120&auto=format&fit=crop" alt="Gujarat Tourism Logo">
+            <span>Gujarat Tourism</span>
+          </a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html#destinations">Destinations</a></li>
+            <li><a href="index.html#experiences" class="active">Experiences</a></li>
+            <li><a href="index.html#culture">Culture</a></li>
+            <li><a href="index.html#plan">Plan Your Trip</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="section bg-light" style="min-height: 60vh;">
+      <div class="container">
+        <div id="experience-detail-content" class="experience-detail-card">
+          <!-- Details dynamically loaded via JS -->
+        </div>
+        <a href="index.html#experiences" class="btn btn-primary" style="margin-top:2rem;"><i class="fas fa-arrow-left"></i> Back to Experiences</a>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Minimal Chatbot floating button (reuse style from main site) -->
+  <div class="chatbot-fab" id="chatbot-fab">
+    <i class="fas fa-comments"></i>
+  </div>
+  <div class="chatbot-modal" id="chatbot-modal">
+    <div class="chatbot-header">
+      <span>Ask Gujarat Tourism</span>
+      <button class="chatbot-close" id="chatbot-close">&times;</button>
+    </div>
+    <div class="chatbot-body" id="chatbot-body">
+      <div class="chatbot-msg chatbot-msg-bot">Hello! How can I help you with your trip to Gujarat?</div>
+    </div>
+    <div class="chatbot-footer">
+      <input type="text" id="chatbot-input" placeholder="Type your message..." autocomplete="off" />
+      <button id="chatbot-send"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+  <script>
+  // Minimal loader: parse URL to show correct content
+  const expDetails = {
+    "heritage-tours": {
+      title: "Heritage Tours",
+      desc: "Discover Gujarat's heritage with guided tours of ancient forts, palaces, stepwells, and UNESCO sites like Rani ki Vav. Experience the legacy of empires and dynasties that shaped this land.",
+      img: "https://images.unsplash.com/photo-1623069947893-2f2323792526?q=80&w=800&auto=format&fit=crop"
+    },
+    "rann-utsav": {
+      title: "Rann Utsav",
+      desc: "Rann Utsav is Gujarat's grand celebration of music, dance, crafts, and cuisine amid the surreal white desert. Stay in luxury tents and enjoy moonlit vistas and camel rides.",
+      img: "https://images.unsplash.com/photo-1611811606571-0daa7d494d77?q=80&w=800&auto=format&fit=crop"
+    },
+    "wildlife-safari": {
+      title: "Wildlife Safari",
+      desc: "Explore Gir National Park by jeep to see lions, leopards, and a variety of wildlife. Nature lovers will also enjoy birdwatching and scenic landscapes.",
+      img: "https://images.unsplash.com/photo-1591269428359-7c844581462e?q=80&w=800&auto=format&fit=crop"
+    },
+    "cultural-shows": {
+      title: "Cultural Shows",
+      desc: "Traditional Gujarati folk dances like Garba and Dandiya, and colorful performances, bring the state's culture alive. Enjoy music, plays, and festive celebrations year-round.",
+      img: "https://images.unsplash.com/photo-1615467922724-f438f398156c?q=80&w=800&auto=format&fit=crop"
+    }
+  };
+  function getQueryParam(param) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(param) || "";
+  }
+  window.addEventListener('DOMContentLoaded', function() {
+    const expKey = getQueryParam('exp');
+    const exp = expDetails[expKey];
+    const container = document.getElementById('experience-detail-content');
+    if (exp) {
+      container.innerHTML = `
+        <h1>${exp.title}</h1>
+        <img src="${exp.img}" alt="${exp.title}" style="width:100%;max-width:700px; border-radius: 12px; margin-bottom:1rem;">
+        <p style="font-size:1.15rem">${exp.desc}</p>
+      `;
+    } else {
+      container.innerHTML = "<h2>Experience Not Found</h2><p>The requested experience detail could not be found.</p>";
+    }
+    // Chatbot JS (re-use from main.js, simplified)
+    const chatbotFab = document.getElementById('chatbot-fab');
+    const chatbotModal = document.getElementById('chatbot-modal');
+    const chatbotClose = document.getElementById('chatbot-close');
+    const chatbotSend = document.getElementById('chatbot-send');
+    const chatbotInput = document.getElementById('chatbot-input');
+    const chatbotBody = document.getElementById('chatbot-body');
+    chatbotFab.addEventListener('click', () => {
+      chatbotModal.classList.add('active');
+      chatbotInput.focus();
+    });
+    chatbotClose.addEventListener('click', () => {
+      chatbotModal.classList.remove('active');
+    });
+    function sendUserMessage(msg) {
+      if (!msg.trim()) return;
+      const userDiv = document.createElement('div');
+      userDiv.className = 'chatbot-msg chatbot-msg-user';
+      userDiv.textContent = msg;
+      chatbotBody.appendChild(userDiv);
+      chatbotBody.scrollTop = chatbotBody.scrollHeight;
+      setTimeout(() => sendBotReply(msg), 500);
+    }
+    function sendBotReply(msg) {
+      let reply = '';
+      const m = msg.toLowerCase();
+      if (m.includes('hello') || m.includes('hi')) {
+        reply = "Namaste! How may I assist you with Gujarat tourism?";
+      } else if (m.includes('statue')) {
+        reply = "The Statue of Unity is the world’s tallest statue, honoring Sardar Vallabhbhai Patel in Kevadia.";
+      } else if (m.includes('culture')) {
+        reply = "Gujarat’s culture includes dance like Garba/Dandiya, vibrant festivals, and exquisite handicrafts.";
+      } else if (m.includes('food')) {
+        reply = "Don’t miss Gujarati Thali, dhokla, fafda, and sweets like jalebi!";
+      } else if (m.includes('lion') || m.includes('wildlife')) {
+        reply = "Gir National Park is famous for the Asiatic lion. Visit between December and April for the best experience.";
+      } else if (m.includes('thank')) {
+        reply = "You’re welcome! Happy to help.";
+      } else {
+        reply = "I’m here to help! Ask me about destinations, culture, food, or anything about Gujarat.";
+      }
+      const botDiv = document.createElement('div');
+      botDiv.className = 'chatbot-msg chatbot-msg-bot';
+      botDiv.textContent = reply;
+      chatbotBody.appendChild(botDiv);
+      chatbotBody.scrollTop = chatbotBody.scrollHeight;
+    }
+    chatbotSend.addEventListener('click', () => {
+      const msg = chatbotInput.value;
+      sendUserMessage(msg);
+      chatbotInput.value = '';
+    });
+    chatbotInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        chatbotSend.click();
+      }
+    });
+  });
+  </script>
+</body>
+</html>

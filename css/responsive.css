@@ -1,0 +1,220 @@
+
+/* Responsive Styles */
+
+/* Large devices (1200px and down) */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .destination-card {
+    flex: 0 0 280px;
+  }
+}
+
+/* Medium devices (992px and down) */
+@media (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .map-container {
+    flex-direction: column;
+  }
+
+  .map-sidebar {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  #gujarat-map {
+    height: 400px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .testimonial-card {
+    padding: 20px;
+  }
+
+  .newsletter-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .newsletter-content {
+    margin-bottom: 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-logo {
+    text-align: center;
+    margin-bottom: 30px;
+    flex: 0 0 auto;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .footer-section {
+    flex: 0 0 45%;
+  }
+}
+
+/* Small devices (768px and down) */
+@media (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+
+  #main-header {
+    padding: 10px 0;
+  }
+
+  .header-content {
+    height: 70px;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-md);
+    padding: 20px;
+    transform: translateY(-100%);
+    z-index: 999;
+    transition: transform var(--transition-normal);
+  }
+
+  .main-nav.active {
+    transform: translateY(0);
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .info-cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .experiences-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .plan-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .testimonial-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .testimonial-img {
+    margin: 0 auto 20px;
+  }
+
+  .footer-section {
+    flex: 0 0 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* Extra small devices (576px and down) */
+@media (max-width: 576px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .hero-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  #gujarat-map {
+    height: 300px;
+  }
+
+  .modal-content {
+    max-width: 95%;
+  }
+}
